@@ -1,0 +1,37 @@
+<!DOCTYPE html dir="ltr" lang="en-US">
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.graph.js"></script>
+</head>
+<body>
+<div id='test' style='width:800px;height:800px;border:1px dashed gray;'>
+asd
+</div>
+<style>
+.hidden {display:hidden;}
+</style>
+<script>
+$('#test').graph({env_mode:'development',env_fps:60});
+$('#test').graph('add_node',{color:'red',x:100,y:100,radius:20});
+
+$('#test').graph('add_node',{color:'green',x:210,y:200,radius:50});
+$('#test').graph('add_node',{color:'black',x:320,y:400});
+$('#test').graph('add_node',{color:'yellow',x:330,y:200});
+$('#test').graph('add_node',{color:'whitesmoke',x:540,y:200});
+
+
+
+$('#test').graph('add_edge',{color:'red',from:0,to:1});
+$('#test').graph('add_edge',{color:'green',from:3,to:1});
+$('#test').graph('add_edge',{color:'gray',from:0,to:2});
+
+
+
+
+</script>
+<input type='text' id='eval' style='width:700px;height:30px;'>
+<div style='width:100px;height:20px;border:1px solid gray;text-align:center;' onclick='eval($("#eval").val());'>eval</div>
+</body>
+</html>
